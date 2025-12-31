@@ -1,0 +1,87 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f8f5f5 0%, #f6f4f4 100%);
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid #333;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f7b731);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 5s ease infinite;
+}
+
+header p {
+  color: #aaa;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.canvas-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f4f4;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.canvas-container canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+}
+
